@@ -1,0 +1,22 @@
+<div class="drop-collection">
+    <a href="/chirps/delete/all" class="drop-collection-btn">Drop Collection</a>
+</div>
+
+<div class="data-container">
+    {{#chirps}}
+    <div class="data">
+        <p class="title">{{title}} <span class="author">By: {{author}}</span></p>
+
+        <p>{{post}}</p>
+        <hr>
+        <p>
+        {{#comment}}
+            <p class="comment-style">{{.}}</p>
+        {{/comment}}
+        </p>
+        <form action="/chirps/delete/{{_id}}" method="post">
+            <button type="submit" name="button" class="delete-btn"><b>Delete</b></button>
+        </form>
+    </div>
+    {{/chirps}}
+</div>
