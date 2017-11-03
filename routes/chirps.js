@@ -13,6 +13,13 @@ router.get('/', (req,res) => {
     })
 });
 
+router.get('/all', (req,res) => {
+    chirps.find({})
+    .then((data) => {
+        res.send({'data', data});
+    })
+})
+
 router.post('/new', (req,res) => {
     let newPost = {
         title: req.body.title,

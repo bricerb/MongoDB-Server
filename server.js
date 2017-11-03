@@ -8,6 +8,7 @@ const mustacheExpress     = require("mustache-express");
 const path                = require("path");
 const routes              = require("./routes/index");
 const chirpRoutes         = require("./routes/chirps");
+const weatehrRoutes       = require("./routes/weather");
 
 // Initialze Express App
 const app = express();
@@ -32,6 +33,7 @@ app.use(validator());
 // Routes
 app.use(routes);
 app.use('/chirps',chirpRoutes)
+app.use('/weather', weatehrRoutes)
 
 // Listening on port
 app.listen(app.get('port'), () => {
