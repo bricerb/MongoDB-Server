@@ -40,7 +40,7 @@ router.get("/delete/all", (req,res) => {
 router.get('/all', (req,res) => {
     chirps.find({})
     .then((data) => {
-        res.send({'data', data});
+        res.send({'data': data});
     })
 })
 
